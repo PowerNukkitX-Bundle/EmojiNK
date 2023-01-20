@@ -5,18 +5,16 @@ import cn.nukkit.command.Command;
 import cn.nukkit.command.CommandSender;
 import cn.nukkit.form.element.ElementButton;
 import cn.nukkit.form.window.FormWindowSimple;
-import cn.nukkit.utils.TextFormat;
 
 public class EmojiCommand extends Command {
     public EmojiCommand() {
         super("emoji", "send emoji!");
         this.setAliases(new String[]{"emj", "ej"});
-        this.setPermission("commands.emoji");
     }
 
     @Override
     public boolean execute(CommandSender sender, String commandLabel, String[] args) {
-        if (!testPermission(sender) || !sender.isPlayer()) {
+        if (!sender.isPlayer()) {
             return false;
         }
         //send form

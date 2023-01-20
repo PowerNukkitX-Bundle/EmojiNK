@@ -1,5 +1,5 @@
 name: EmojiNK
 main: cn.daogecmd.emojink.Loader
-version: "1.0.0"
+version: "1.0.1"
 author: daoge_cmd
 api: [ "1.0.13" ]
