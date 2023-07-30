@@ -1,0 +1,4 @@
+cn\daogecmd\emojink\api\EmojiAPI.class
+cn\daogecmd\emojink\listeners\PlayerListener.class
+cn\daogecmd\emojink\Loader.class
+cn\daogecmd\emojink\command\EmojiCommand.class

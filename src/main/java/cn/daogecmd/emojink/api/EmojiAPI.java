@@ -1,19 +1,23 @@
 package cn.daogecmd.emojink.api;
 
+import cn.daogecmd.emojink.Loader;
 import cn.nukkit.Player;
 import cn.nukkit.Server;
 import cn.nukkit.entity.Entity;
 import cn.nukkit.level.DimensionEnum;
 import cn.nukkit.network.protocol.SpawnParticleEffectPacket;
+import cn.nukkit.utils.Config;
 import lombok.Getter;
+import lombok.Setter;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 public final class EmojiAPI {
     private static final Map<String, double[]> EMOJI_POS = new HashMap<>();
-    
+    private final static Map<String, List<String>> EMOJI_PHRASES = new HashMap<>();
+    private final static Config EMOJI_PHRASES_CONFIG = new Config(Loader.INSTANCE.getDataFolder().toPath().resolve("emoji-phrases.yml").toString(), Config.YAML);
+
     static {
         EMOJI_POS.put("smiley", new double[]{0, 0});
         EMOJI_POS.put("grimacing", new double[]{0.01, 0});
@@ -56,14 +60,16 @@ public final class EmojiAPI {
         EMOJI_POS.put("slight_frown", new double[]{0.06, 0.04});
         EMOJI_POS.put("frowning2", new double[]{0.07, 0.04});
     }
-    
+
     @Getter
     private static EmojiAPI API;
     //key: emoji_id, value: emoji_name
     @Getter
     private final Map<String, String> emojiList;
     private final Server server;
-    
+    @Getter @Setter
+    private static boolean isAutoEmoji = true;
+
     private EmojiAPI(Map<String, String> emojiList) {
         API = this;
         for (var id : EMOJI_POS.keySet()) {
@@ -77,6 +83,9 @@ public final class EmojiAPI {
     public static void initAPI(Map<String, String> emojiList) {
         if (API == null) {
             API = new EmojiAPI(emojiList);
+            for (String emojiId : emojiList.keySet()) {
+                EMOJI_PHRASES.put(emojiId, EMOJI_PHRASES_CONFIG.getStringList(emojiId));
+            }
         }
     }
 
@@ -101,5 +110,19 @@ public final class EmojiAPI {
                 .append(pos[1])
                 .append("}}]").toString().describeConstable();
         Server.broadcastPacket(viewers, pk);
+    }
+
+    /**
+     * @return the emoji id or Null if there's no emoji phrase in the given phrase
+     */
+    @Nullable
+    public String getPhraseEmoji(String phrase) {
+        phrase = phrase.toLowerCase();
+        for (Map.Entry<String, List<String>> entry : EMOJI_PHRASES.entrySet()) {
+            for (String emojiPhrase : entry.getValue()) {
+                if (phrase.contains(emojiPhrase)) return entry.getKey();
+            }
+        }
+        return null;
     }
 }
