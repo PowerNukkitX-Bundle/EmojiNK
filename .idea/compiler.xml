@@ -9,5 +9,8 @@
         <module name="EmojiNK" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="EmojiNK" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
