@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: cn.powernukkitx:powernukkitx:1.20.10-r1" type="java-imported" external-system-id="Maven">
+    <properties groupId="cn.powernukkitx" artifactId="powernukkitx" version="1.20.10-r1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/powernukkitx/powernukkitx/1.20.10-r1/powernukkitx-1.20.10-r1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/powernukkitx/powernukkitx/1.20.10-r1/powernukkitx-1.20.10-r1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cn/powernukkitx/powernukkitx/1.20.10-r1/powernukkitx-1.20.10-r1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
