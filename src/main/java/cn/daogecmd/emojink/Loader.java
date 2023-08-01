@@ -21,7 +21,7 @@ public class Loader extends PluginBase {
     public void onEnable() {
 
         //save emoji-phrases.yml
-        saveResource("emoji-phrases.yml", true);
+        saveResource("emoji-phrases.yml", false);
 
         //save emoji.yml
         saveResource("emoji.yml");
