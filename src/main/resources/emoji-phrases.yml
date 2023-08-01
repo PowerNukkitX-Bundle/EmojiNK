@@ -4,9 +4,7 @@ grimacing:
 grin: []
 joy:
   - "haha"
-  - "hhhh"
   - "lmao"
-  - "ﻬﻬﻬ"
   - "lmfao"
   - "joy"
 smile:
@@ -18,15 +16,13 @@ sweat_smile:
   - "sweat_smile"
 laughing:
   - "lol"
-  - "xd"
 innocent:
   - "trust me"
   - "not me"
   - "innocent"
 wink: []
 blush: []
-slight_smile:
-  - ":)"
+slight_smile: []
 upside_down:
   - "why"
 relaxed:
@@ -38,7 +34,6 @@ yum:
 relieved: []
 heart_eyes:
   - "love"
-  - "<3"
 kissing_heart: []
 kissing: []
 kissing_smiling_eyes: []
@@ -66,10 +61,8 @@ no_mouth:
 neutral_face:
   - "neutral_face"
   - "not funny"
-  - "._."
 expressionless:
   - "bruh"
-  - "-_-"
   - "expressionless"
 unamused: []
 rolling_eyes:
@@ -88,7 +81,6 @@ rage:
   - "mad"
   - "hate you"
   - "rage"
-  - ">:("
 pensive:
   - "alone"
   - "pensive"
@@ -97,5 +89,4 @@ confused:
 slight_frown:
   - "slight_frown"
   - "sad"
-  - ":("
 frowning2: []
